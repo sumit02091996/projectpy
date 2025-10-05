@@ -4,12 +4,8 @@ import streamlit as st
 import pandas as pd
 import openai
 import os
-from openai import OpenAI
 
-client = OpenAI(api_key=os.environ["OPENAI_API_KEY"])
 
-# Or, if your library auto-reads environment variables, just:
-# client = OpenAI()
 
 
 openai.api_key = "YOUR_OPENAI_API_KEY"
@@ -73,4 +69,5 @@ else:
     st.info("Upload an Excel file to start")
 
 	
+
 
