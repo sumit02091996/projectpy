@@ -3,6 +3,19 @@
 import streamlit as st
 import pandas as pd
 import openai
+from openai import OpenAI
+
+client = OpenAI()
+
+response = client.chat.completions.create(
+    model="gpt-4o-mini",
+    messages=[
+        {"role": "system", "content": "You are a helpful assistant."},
+        {"role": "user", "content": "Hello, how are you?"}
+    ]
+)
+
+print(response.choices[0].message.content)
 
 openai.api_key = "YOUR_OPENAI_API_KEY"
 
@@ -65,3 +78,4 @@ else:
     st.info("Upload an Excel file to start")
 
 	
+
