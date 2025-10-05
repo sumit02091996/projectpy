@@ -1,4 +1,4 @@
-pip install streamlit openai pandas openpyxl
+
 
 import streamlit as st
 import pandas as pd
@@ -63,4 +63,5 @@ Only output the code.
         st.error(f"Error reading Excel file: {e}")
 else:
     st.info("Upload an Excel file to start")
+
 	
