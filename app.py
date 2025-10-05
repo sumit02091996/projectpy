@@ -3,19 +3,14 @@
 import streamlit as st
 import pandas as pd
 import openai
+import os
 from openai import OpenAI
 
-client = OpenAI()
+client = OpenAI(api_key=os.environ["OPENAI_API_KEY"])
 
-response = client.chat.completions.create(
-    model="gpt-4o-mini",
-    messages=[
-        {"role": "system", "content": "You are a helpful assistant."},
-        {"role": "user", "content": "Hello, how are you?"}
-    ]
-)
+# Or, if your library auto-reads environment variables, just:
+# client = OpenAI()
 
-print(response.choices[0].message.content)
 
 openai.api_key = "YOUR_OPENAI_API_KEY"
 
